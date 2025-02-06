@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/humble/include/**",
+        "/home/yk/ros2_ws/src/ros2_artificial_potential_field/include/**",
+        "/home/yk/ros2_ws/src/ros2_cpp_turtlebot3/include/**",
+        "/home/yk/ros2_ws/src/ros2_cpp_tutorial/include/**",
+        "/home/yk/ros2_ws/src/ros2_turtlebot_controller/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
