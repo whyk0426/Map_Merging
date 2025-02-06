@@ -143,7 +143,6 @@ class MergeMapNode(Node):
             if label == -1:
                 continue  
             cluster_sizes[label] = (labels == label).sum()
-            self.get_logger().info(f'Cluster {label}: Size = {cluster_sizes[label]}')  
 
         for label, size in cluster_sizes.items():
             if size >= 5:
@@ -205,41 +204,6 @@ class MergeMapNode(Node):
         rotated_map_msg.data = rotated_map_data
 
         return rotated_map_msg
-
-    # def rotate_map(self, map_data, angle):
-    #     robot_x = - map_data.info.origin.position.x
-    #     robot_y = - map_data.info.origin.position.y
-    #     height = map_data.info.height
-    #     width = map_data.info.width
-    #     resolution = map_data.info.resolution
-
-    #     rotated_map_data = [-1] * (height * width)
-
-    #     cos_th = np.cos(-angle) 
-    #     sin_th = np.sin(-angle)
-
-    #     for i in range(height):
-    #         for j in range(width):
-    #             rotated_x = j * resolution
-    #             rotated_y = i * resolution
-
-    #             orig_x = cos_th * (rotated_x - robot_x) - sin_th * (rotated_y - robot_y) + robot_x
-    #             orig_y = sin_th * (rotated_x - robot_x) + cos_th * (rotated_y - robot_y) + robot_y
-
-    #             orig_j = int(np.floor(orig_x / resolution))
-    #             orig_i = int(np.floor(orig_y / resolution))
-
-    #             if 0 <= orig_i < height and 0 <= orig_j < width:
-    #                 rotated_index = i * width + j
-    #                 orig_index = orig_i * width + orig_j
-    #                 rotated_map_data[rotated_index] = map_data.data[orig_index]
-
-    #     rotated_map_msg = OccupancyGrid()
-    #     rotated_map_msg.header = map_data.header
-    #     rotated_map_msg.info = map_data.info
-    #     rotated_map_msg.data = rotated_map_data
-
-    #     return rotated_map_msg
 
 
     def merge_two_maps(self, map0, map1):
