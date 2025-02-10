@@ -1,4 +1,4 @@
-# Map Merging Techniques in Multi-robot Environments
+# Map Merging Techniques in Multi-robot Environments-ROS2
 ## Algorithm
 
 ## How to customize
