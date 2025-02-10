@@ -2,8 +2,7 @@
 ## Algorithm
 
 ## How to customize
-The Merge Map ROS2 pkg can be customized and launched in your own 
-
+The Merge Map ROS2 pkg can be customized and launched in your own `launch.py` file by adding the following code block. You can update `/yourMapName1` and `/youtMapName2` topics according to yoour project.
 ```python
 Node(
             package='merge_map',
@@ -12,7 +11,6 @@ Node(
             parameters=[{'use_sim_time': True}],
             remappings=[
                 ("/map0", "/Lima/map"),
-                #("/map1", "/Alpha/map"),
                 ("/map1", "/Romeo/map"),
                 ],
         )
